@@ -5,6 +5,8 @@ import Home2 from "./Home2";
 import Type from "./Type";
 import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import Projects from "../Projects/Projects";
+import About from "../About/About";
 
 function Home() {
   return (
@@ -43,7 +45,8 @@ function Home() {
         </Container>
       </Container>
       <Home2 />
-
+      <Projects></Projects>
+      <About></About>
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
