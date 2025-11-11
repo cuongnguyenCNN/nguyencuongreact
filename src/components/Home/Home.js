@@ -29,24 +29,24 @@ function Home() {
     e.preventDefault();
     const err = validate();
     if (err) return setErrors(err);
-
     setLoading(true);
     setErrors("");
     setSuccess("");
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxKtlx_w4LsVGLvYdaUbH4aTchHyvIOOoqrK8DLRDFw1Jcllk6Wq5Xksi1EFFMYdZeN/exec",
+        "https://script.google.com/macros/s/AKfycbw2HhzAd27ff1WzfcAdLuPfOQ1CIPPrtFmb2Fcq0MaDlNxl1DPOIFfY7vNYmncBfa3G/exec",
         {
           method: "POST",
+          mode: "no-cors",
           body: JSON.stringify(form),
           headers: { "Content-Type": "application/json" },
         }
       );
-      const text = await response.text();
-      if (text === "Success") {
+      const data = await response.json();
+      if (data.result === "success") {
         setSuccess("Message sent successfully!");
         setForm({ name: "", email: "", message: "" });
-      } else throw new Error("Failed to send");
+      } else setErrors("❌ Lỗi gửi form: " + data.message);
     } catch (err) {
       setErrors("Something went wrong. Try again.");
     }
