@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { SiNextdotjs, SiSolidity } from "react-icons/si";
-import { FaRust } from "react-icons/fa";
 import Go from "../../Assets/TechIcons/go.svg";
 import C from "../../Assets/TechIcons/C++.svg";
 import Javascript from "../../Assets/TechIcons/Javascript.svg";
@@ -29,8 +28,8 @@ function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={C} alt="C++" />
-        <div className="tech-icons-text">C++</div>
+        <img src={C} alt="C#" />
+        <div className="tech-icons-text">C#</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <img src={Javascript} alt="javascript" />
@@ -121,11 +120,6 @@ function Techstack() {
       <Col xs={4} md={2} className="tech-icons">
         <img src={Postman} alt="Postman" />
         <div className="tech-icons-text">Postman</div>
-      </Col>
-
-      <Col xs={4} md={2} className="tech-icons">
-        <FaRust fontSize={"24px"} />
-        <div className="tech-icons-text">Rust</div>
       </Col>
 
       <Col xs={4} md={2} className="tech-icons">
