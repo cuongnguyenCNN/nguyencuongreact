@@ -21,12 +21,9 @@ function Home2() {
               <br />
               I’m proficient in
               <i>
-                <b className="purple">
-                  {" "}
-                  JavaScript, C++, Rust, Node.js, and Java{" "}
-                </b>
+                <b className="purple"> JavaScript, C#, Node.js, and SQL </b>
               </i>
-              — and I enjoy working across both backend and frontend stacks.
+              — and I enjoy working across both backend and database stacks.
               <br />
               <br />
               My key areas of interest include developing
