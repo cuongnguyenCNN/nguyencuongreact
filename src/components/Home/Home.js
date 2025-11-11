@@ -50,6 +50,7 @@ function Home() {
     } catch (err) {
       setErrors("Something went wrong. Try again.");
     }
+    setForm({ name: "", email: "", message: "" });
     setLoading(false);
   };
   return (
