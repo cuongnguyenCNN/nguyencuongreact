@@ -4,6 +4,8 @@ import macOs from "../../Assets/TechIcons/Apple MacOSX.svg";
 import chrome from "../../Assets/TechIcons/Google Chrome.svg";
 import vsCode from "../../Assets/TechIcons/vscode.svg";
 import intelliJ from "../../Assets/TechIcons/intellij-idea.svg";
+import cursor from "../../Assets/TechIcons/cursor.svg";
+import claude from "../../Assets/TechIcons/claude-color.svg";
 
 function Toolstack() {
   return (
@@ -13,14 +15,21 @@ function Toolstack() {
         <div className="tech-icons-text">Mac Os</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons ">
-        <img src={chrome} alt="Chrome" className="tech-icon-images" />
-        <div className="tech-icons-text">Google Chrome</div>
+        <img src={cursor} alt="vsCode" className="tech-icon-images" />
+        <div className="tech-icons-text">Cursor AI</div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons ">
+        <img src={claude} alt="vsCode" className="tech-icon-images" />
+        <div className="tech-icons-text">Claude AI</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons ">
         <img src={vsCode} alt="vsCode" className="tech-icon-images" />
         <div className="tech-icons-text">Vs Code</div>
       </Col>
-
+      <Col xs={4} md={2} className="tech-icons ">
+        <img src={chrome} alt="Chrome" className="tech-icon-images" />
+        <div className="tech-icons-text">Google Chrome</div>
+      </Col>
       <Col xs={4} md={2} className="tech-icons ">
         <img src={intelliJ} alt="go" className="tech-icon-images" />
         <div className="tech-icons-text">IntelliJ</div>

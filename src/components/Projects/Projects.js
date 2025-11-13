@@ -48,7 +48,7 @@ function Projects() {
               imgPath={editor}
               isBlog={false}
               title="RobotFleet"
-              description=""
+              description="A unified dashboard to control, monitor, and optimize hundreds of AGV robots in real-time."
               ghLink="https://github.com/cuongnguyencnn/Editor.io"
               demoLink="https://robotfleet.onrender.com/"
             />
