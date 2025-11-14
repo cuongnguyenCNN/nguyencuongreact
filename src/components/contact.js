@@ -4,7 +4,12 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [errors, setErrors] = useState("");
@@ -13,10 +18,12 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   const validate = () => {
-    if (!form.name || !form.email || !form.message)
+    if (!form.name || !form.email || !form.phone || !form.message)
       return "Please fill in all fields.";
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(form.email)) return "Invalid email format.";
+    const phoneRegex = /^(0[0-9]{9}|84[0-9]{9})$/;
+    if (!phoneRegex.test(form.phone)) return "Invalid phone number.";
     return "";
   };
   const handleSubmit = async (e) => {
@@ -28,7 +35,7 @@ export default function Contact() {
     setSuccess("");
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbw2HhzAd27ff1WzfcAdLuPfOQ1CIPPrtFmb2Fcq0MaDlNxl1DPOIFfY7vNYmncBfa3G/exec",
+        "https://script.google.com/macros/s/AKfycbzcF4SdctYnjbp6t1reTYDPypHkVgEELfCpe4rwADf9A_D3mGJ3VFz3r7bMYkG194-s/exec",
         {
           method: "POST",
           mode: "no-cors",
@@ -38,12 +45,12 @@ export default function Contact() {
       );
       if (response) {
         setSuccess("Message sent successfully!");
-        setForm({ name: "", email: "", message: "" });
+        setForm({ name: "", phone: "", email: "", message: "" });
       } else setErrors("❌ Lỗi gửi form: ");
     } catch (err) {
       setErrors("Something went wrong. Try again.");
     }
-    setForm({ name: "", email: "", message: "" });
+    setForm({ name: "", phone: "", email: "", message: "" });
     setLoading(false);
   };
   return (
@@ -59,7 +66,16 @@ export default function Contact() {
           required
         />
       </Form.Group>
-
+      <Form.Group className="mb-3">
+        <Form.Label>Phone</Form.Label>
+        <Form.Control
+          type="tel"
+          placeholder="Enter your phone"
+          name="phone"
+          value={form.phone}
+          onChange={handleChange}
+        />
+      </Form.Group>
       <Form.Group className="mb-3">
         <Form.Label>Email</Form.Label>
         <Form.Control
@@ -77,14 +93,18 @@ export default function Contact() {
         <Form.Control
           as="textarea"
           rows={3}
-          placeholder="Write your message..."
+          placeholder="Write your requirements..."
           name="message"
           value={form.message}
           onChange={handleChange}
           required
         />
       </Form.Group>
-      {errors && <p className="text-red-500 text-sm">{errors}</p>}
+      {errors && (
+        <p className="text-red-500 text-sm" style={{ color: "red" }}>
+          {errors}
+        </p>
+      )}
       {success && <p className="mt-3 text-success">{success}</p>}
       <div className="text-center">
         <Button variant="primary" type="submit" className="px-4">
