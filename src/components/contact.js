@@ -18,12 +18,12 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   const validate = () => {
-    if (!form.name || !form.email || !form.phone || !form.message)
+    if (!form.name || !form.email || !form.message)
       return "Please fill in all fields.";
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(form.email)) return "Invalid email format.";
-    const phoneRegex = /^(0[0-9]{9}|84[0-9]{9})$/;
-    if (!phoneRegex.test(form.phone)) return "Invalid phone number.";
+    // const phoneRegex = /^(0[0-9]{9}|84[0-9]{9})$/;
+    // if (!phoneRegex.test(form.phone)) return "Invalid phone number.";
     return "";
   };
   const handleSubmit = async (e) => {
@@ -66,7 +66,7 @@ export default function Contact() {
           required
         />
       </Form.Group>
-      <Form.Group className="mb-3">
+      {/* <Form.Group className="mb-3">
         <Form.Label>Phone</Form.Label>
         <Form.Control
           type="tel"
@@ -75,7 +75,7 @@ export default function Contact() {
           value={form.phone}
           onChange={handleChange}
         />
-      </Form.Group>
+      </Form.Group> */}
       <Form.Group className="mb-3">
         <Form.Label>Email</Form.Label>
         <Form.Control
