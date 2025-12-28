@@ -86,6 +86,16 @@ function Projects() {
               demoLink="https://noteflowai.netlify.app/"
             />
           </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={emotion}
+              isBlog={false}
+              title="Auto Comment On Facebook"
+              description="A chrome extension help you automatically comment on Facebook."
+              ghLink=""
+              demoLink="https://chromewebstore.google.com/detail/auto-comments-facebook-gr/bfiinibmlppmggdaokockclfgaimdclf?authuser=0&hl=vi"
+            />
+          </Col>
         </Row>
       </Container>
     </Container>
