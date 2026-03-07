@@ -57,12 +57,12 @@ function Hero() {
   return (
     <section className="text-center py-24 px-6 bg-gradient-to-b from-indigo-50">
       <h1 className="text-5xl font-bold max-w-3xl mx-auto">
-        Automatically Reply to Facebook Comments and Capture Customers
+        Automatically comments to Facebook Group and Capture Customers
       </h1>
 
       <p className="mt-6 text-xl text-gray-600 max-w-2xl mx-auto">
-        Stop wasting hours replying to comments. Our automation tool instantly
-        responds, engages users and converts comments into leads.
+        Stop wasting hours to comments. Our automation tool instantly comment,
+        engages users and converts comments into leads.
       </p>
 
       <div className="mt-10 space-x-4">
@@ -97,7 +97,7 @@ function Problem() {
   return (
     <section className="py-24 bg-gray-50 text-center px-6">
       <h2 className="text-4xl font-bold">
-        Replying To Facebook Comments Manually Is Painful
+        Facebook Comments Manually Is Painful
       </h2>
 
       <div className="grid md:grid-cols-3 gap-10 mt-16 max-w-6xl mx-auto">
