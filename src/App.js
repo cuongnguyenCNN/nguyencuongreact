@@ -17,6 +17,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import AutoCommentFB from "./components/Projects/AutoCommentFB";
+import MainLayout from "./layouts/MainLayout";
+import LandingLayout from "./layouts/Landingpage";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -33,20 +36,24 @@ function App() {
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route
-            path="/privacypolicycommentfb"
-            element={<PrivacyPolicyCommentFB />}
-          />
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/project" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route
+              path="/privacypolicycommentfb"
+              element={<PrivacyPolicyCommentFB />}
+            />
+          </Route>
+          {/* LANDING PAGE TOOL */}
+          <Route element={<LandingLayout />}>
+            <Route path="/autocommentfb" element={<AutoCommentFB />} />
+          </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );
