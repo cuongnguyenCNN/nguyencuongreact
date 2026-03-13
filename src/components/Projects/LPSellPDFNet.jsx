@@ -44,7 +44,7 @@ const handleSubmit = async (e) => {
 
   try {
     await fetch(
-      "https://script.google.com/macros/s/AKfycbyikrNoRLvgjipnKq6JfIFixmQdqOxCmDXhqnldGy0_YofVFKF2lFlg1xex9N6qlfs7/exec",
+      "https://script.google.com/macros/s/AKfycbzCJbw7t_4b0BsbIAsAbq10bRHKWog_41-nPyZAyaI4mrrenomRC7MZrsD64guoodRK/exec",
       {
         method: "POST",
         mode: "no-cors",
