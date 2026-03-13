@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 export default function LandingPage() {
-
+const navigate = useNavigate();
   const [form, setForm] = useState({
   name: "",
   phone: "",
@@ -50,13 +52,13 @@ const handleSubmit = async (e) => {
         mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
-        },
+        }, 
         body: JSON.stringify(form),
       }
     );
 
     setSuccess("Successfully! Check your email for the PDF!");
-
+navigate("/thankyou");
     setForm({
       name: "",
       phone: "",
