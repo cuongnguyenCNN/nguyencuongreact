@@ -130,10 +130,7 @@ function Home() {
               >
                 📩 Contact <strong className="purple"> Me</strong>
               </h2>
-              <h4 style={{ color: "white" }}>
-                {" "}
-                Let's me help you and receive newsletter
-              </h4>
+              <h4 style={{ color: "white" }}> Let's connect with me</h4>
               <Contact></Contact>
             </Col>
           </Row>
@@ -144,7 +141,7 @@ function Home() {
         <Modal.Header closeButton>
           <div>
             <Modal.Title>📬 Contact Me</Modal.Title>
-            <h4> Let's me help you and receive newsletter</h4>
+            <h4> Let's connect with me</h4>
           </div>
         </Modal.Header>
         <Modal.Body>

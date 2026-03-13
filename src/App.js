@@ -18,6 +18,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AutoCommentFB from "./components/Projects/AutoCommentFB";
 import MainLayout from "./layouts/MainLayout";
 import LandingLayout from "./layouts/Landingpage";
+import LPSellPDFNet from "./components/Projects/LPSellPDFNet";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -49,6 +50,7 @@ function App() {
           {/* LANDING PAGE TOOL */}
           <Route element={<LandingLayout />}>
             <Route path="/autocommentfb" element={<AutoCommentFB />} />
+            <Route path="/interviewnet" element={<LPSellPDFNet />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
