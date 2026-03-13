@@ -55,7 +55,7 @@ const handleSubmit = async (e) => {
       }
     );
 
-    setSuccess("Email submitted successfully!");
+    setSuccess("Successfully! Check your email for the PDF!");
 
     setForm({
       name: "",
@@ -64,7 +64,6 @@ const handleSubmit = async (e) => {
       message: "Get PDF Interview C#",
     });
 
-    alert("Check your email for the PDF!");
   } catch (error) {
     setErrors("Something went wrong. Try again.");
   }
@@ -116,9 +115,14 @@ const handleSubmit = async (e) => {
             onChange={handleChange}
             required
           />
-
+      {errors && (
+        <p className="text-red-500 text-sm" style={{ color: "red" }}>
+          {errors}
+        </p>
+      )}
+      {success && <p className="mt-3 text-success">{success}</p>}
           <button className="bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-            Send me the PDF
+                {loading ? "Sending..." : " Send me the PDF  "}
           </button>
 
         </form>
