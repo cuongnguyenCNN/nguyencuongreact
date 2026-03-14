@@ -75,18 +75,18 @@
 //   );
 // }
 import { useEffect } from "react";
-import { CheckCircle, Download, Send, Github } from "lucide-react";
+import { CheckCircle, Send, Github } from "lucide-react";
 
 export default function ThankYouPage() {
-  const pdfUrl = "https://drive.google.com/uc?export=download&id=1JjTOgBDGaHBZMH5jbJS9aLDWvpB3a7uQ";
+//   const pdfUrl = "https://drive.google.com/uc?export=download&id=1JjTOgBDGaHBZMH5jbJS9aLDWvpB3a7uQ";
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      window.location.href = pdfUrl;
-    }, 4000);
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       window.location.href = pdfUrl;
+//     }, 4000);
 
-    return () => clearTimeout(timer);
-  }, []);
+//     return () => clearTimeout(timer);
+//   }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-950 flex items-center justify-center p-6">
@@ -111,11 +111,11 @@ export default function ThankYouPage() {
         {/* Description */}
         <p className="text-gray-600 mb-8 leading-relaxed">
           Your <span className="font-semibold">.NET Interview Questions Guide</span> is ready.
-          A download link has also been sent to your email.
+          A download link has also been sent to your email.  Check your email for the PDF!
         </p>
 
         {/* Download Button */}
-        <a
+        {/* <a
           href={pdfUrl}
           className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 hover:scale-105 transition text-white px-7 py-3 rounded-xl font-semibold shadow-lg"
         >
@@ -125,7 +125,7 @@ export default function ThankYouPage() {
 
         <p className="text-sm text-gray-400 mt-4">
           Your download will start automatically in a few seconds.
-        </p>
+        </p> */}
 
         {/* Divider */}
         <div className="mt-10 border-t pt-6">
