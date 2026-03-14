@@ -74,7 +74,7 @@
 //     </div>
 //   );
 // }
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { CheckCircle, Send, Github } from "lucide-react";
 
 export default function ThankYouPage() {
