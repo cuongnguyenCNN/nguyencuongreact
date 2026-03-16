@@ -75,7 +75,7 @@
 //   );
 // }
 // import { useEffect } from "react";
-import { CheckCircle, Send, Github } from "lucide-react";
+import { CheckCircle, Send, Download, Github } from "lucide-react";
 
 export default function ThankYouPage() {
   const pdfUrl = "https://drive.google.com/uc?export=download&id=1JjTOgBDGaHBZMH5jbJS9aLDWvpB3a7uQ";
