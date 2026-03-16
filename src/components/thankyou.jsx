@@ -78,7 +78,7 @@
 import { CheckCircle, Send, Github } from "lucide-react";
 
 export default function ThankYouPage() {
-//   const pdfUrl = "https://drive.google.com/uc?export=download&id=1JjTOgBDGaHBZMH5jbJS9aLDWvpB3a7uQ";
+  const pdfUrl = "https://drive.google.com/uc?export=download&id=1JjTOgBDGaHBZMH5jbJS9aLDWvpB3a7uQ";
 
 //   useEffect(() => {
 //     const timer = setTimeout(() => {
@@ -115,7 +115,7 @@ export default function ThankYouPage() {
         </p>
 
         {/* Download Button */}
-        {/* <a
+        <a
           href={pdfUrl}
           className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 hover:scale-105 transition text-white px-7 py-3 rounded-xl font-semibold shadow-lg"
         >
@@ -123,7 +123,7 @@ export default function ThankYouPage() {
           Download the PDF
         </a>
 
-        <p className="text-sm text-gray-400 mt-4">
+        {/* <p className="text-sm text-gray-400 mt-4">
           Your download will start automatically in a few seconds.
         </p> */}
 
