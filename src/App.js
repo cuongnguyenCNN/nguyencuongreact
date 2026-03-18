@@ -20,6 +20,7 @@ import MainLayout from "./layouts/MainLayout";
 import LandingLayout from "./layouts/Landingpage";
 import LPSellPDFNet from "./components/Projects/LPSellPDFNet";
 import ThankYouPage from "./components/thankyou";
+import LandingPagerProNet from "./components/Projects/lpsellpdfpronet";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -53,6 +54,7 @@ function App() {
             <Route path="/autocommentfb" element={<AutoCommentFB />} />
             <Route path="/interviewnet" element={<LPSellPDFNet />} />
             <Route path="/thankyou" element={<ThankYouPage />} />
+            <Route path="/prointerview" element={<LandingPagerProNet />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
