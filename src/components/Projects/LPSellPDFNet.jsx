@@ -251,11 +251,11 @@ navigate("/thankyou");
             architecture explanations, and interview strategies.
           </p>
 
-          <p className="text-4xl font-bold mt-6">
+          {/* <p className="text-4xl font-bold mt-6">
             $19
-          </p>
+          </p> */}
 
-          <button className="mt-6 bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition">
+          <button onClick={() => navigate("/prointerview")} className="mt-6 bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition">
             Get Full Interview Guide
           </button>
 
