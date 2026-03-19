@@ -139,7 +139,7 @@ export default function ThankYouPage() {
               className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition"
             >
               <Send className="w-4 h-4" />
-              Join Interview .Net
+              Join Software Devs & Jobs
             </a>
 
             <a
