@@ -21,7 +21,10 @@ import LandingLayout from "./layouts/Landingpage";
 import LPSellPDFNet from "./components/Projects/LPSellPDFNet";
 import ThankYouPage from "./components/thankyou";
 import LandingPagerProNet from "./components/Projects/lpsellpdfpronet";
+import ReactGA from "react-ga4";
+import PDFPrenium from "./components/Projects/pdfprenium";
 
+ReactGA.initialize("G-B059TBH8PG"); // thay bằng ID của mày
 function App() {
   const [load, upadateLoad] = useState(true);
 
@@ -55,6 +58,7 @@ function App() {
             <Route path="/interviewnet" element={<LPSellPDFNet />} />
             <Route path="/thankyou" element={<ThankYouPage />} />
             <Route path="/prointerview" element={<LandingPagerProNet />} />
+            <Route path="/pdfprenium" element={<PDFPrenium />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

@@ -255,7 +255,7 @@ navigate("/thankyou");
             $19
           </p> */}
 
-          <button onClick={() => navigate("/prointerview")} className="mt-6 bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition">
+          <button onClick={() => navigate("/pdfprenium")} className="mt-6 bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition">
             Get Full Interview Guide
           </button>
 
