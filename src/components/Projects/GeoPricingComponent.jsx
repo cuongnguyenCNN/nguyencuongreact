@@ -91,7 +91,8 @@ debugger
       const data = await res.json();
        debugger
       const result = {
-        country: data.country,... (COUNTRY_CONFIG[data.country] || DEFAULT)
+        country: data.country,
+        ...(COUNTRY_CONFIG[data.country] || DEFAULT)
       };
 
       if (data.country) {
