@@ -292,7 +292,7 @@ navigate("/thankyou");
           </p> */}
 
           <button onClick={() => navigate("/pdfprenium")} className="mt-6 bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition">
-            Get Full Interview Guide
+            Get Full 150 questions and deep answers.
           </button>
 
           <p className="text-xs text-gray-400 mt-3">
