@@ -23,6 +23,7 @@ import ThankYouPage from "./components/thankyou";
 import LandingPagerProNet from "./components/Projects/lpsellpdfpronet";
 // import ReactGA from "react-ga4";
 import PDFPrenium from "./components/Projects/pdfprenium";
+import SuccessPage from "./components/successpage";
 
 // ReactGA.initialize("G-B059TBH8PG"); // thay bằng ID của mày
 function App() {
@@ -59,6 +60,7 @@ function App() {
             <Route path="/thankyou" element={<ThankYouPage />} />
             <Route path="/prointerview" element={<LandingPagerProNet />} />
             <Route path="/pdfprenium" element={<PDFPrenium />} />
+            <Route path="/successpage" element={<SuccessPage />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
