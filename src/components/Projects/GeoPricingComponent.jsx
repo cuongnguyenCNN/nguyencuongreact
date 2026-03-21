@@ -131,7 +131,7 @@ debugger
           <h2>🎁 Special Regional Price: $5,99</h2>
           <p>Affordable access for your region</p>
           
-          <button onClick={() => navigate("https://noteflowai.lemonsqueezy.com/checkout/buy/052b0e2a-3b9d-4370-b23f-480593c02cdc")} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md">Upgrade Now</button>
+          <button onClick={() => navigate("https://noteflowai.lemonsqueezy.com/checkout/buy/052b0e2a-3b9d-4370-b23f-480593c02cdc")} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md">🎁 Get Instant Access - $5,99</button>
         </>
       )}
     </div>
