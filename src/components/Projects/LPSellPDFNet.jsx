@@ -3,12 +3,39 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function LandingPage() {
+  const TIER1 = ["US", "UK", "CA", "AU", "DE", "NL"];
+const getUserLocation = async () => {
+  try {
+    const res = await fetch("https://api.country.is/");
+    const data = await res.json();
+
+    return {
+      ip: "unknown",
+      country: data.country,
+      countryCode: data.country,
+    };
+  } catch {
+    return {
+      ip: "unknown",
+      country: "unknown",
+      countryCode: "unknown",
+    };
+  }
+};
+const getTier = (countryCode) => {
+  if (TIER1.includes(countryCode)) return "Tier1";
+  return "Tier3";
+};
 const navigate = useNavigate();
   const [form, setForm] = useState({
   name: "",
   phone: "",
   email: "",
   message: "Get PDF Interview C#",
+    ip: "",
+    country:"",
+    countryCode: "",
+    tier: "",
 });
 
 const [loading, setLoading] = useState(false);
@@ -23,7 +50,7 @@ const validate = () => {
 
   return "";
 };
-
+ 
 const handleChange = (e) => {
   setForm({
     ...form,
@@ -43,17 +70,26 @@ const handleSubmit = async (e) => {
   setLoading(true);
   setErrors("");
   setSuccess("");
+ const location = await getUserLocation();
 
+const payload = {
+    ...form,
+    ip: location.ip,
+    country: location.country,
+    countryCode: location.countryCode,
+    tier: getTier(location.countryCode),
+  };
+  debugger
   try {
     await fetch(
-      "https://script.google.com/macros/s/AKfycbyHr0r4OGsO_4HHmVf3X4lFRYvkQKmTSL2Devwdvgi-Cb-8fmCmwM3pQhC8Dm8SX4MZ/exec",
+      "https://script.google.com/macros/s/AKfycbx5QE6Rl1jLoChaRdDxRuZCg0BxJKKr7E3lLSxpUOznog9GM3YofZIYIgP4-BtxIak6/exec",
       {
         method: "POST",
         mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         }, 
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       }
     );
 
