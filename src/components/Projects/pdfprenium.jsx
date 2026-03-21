@@ -159,10 +159,145 @@ import { useNavigate } from "react-router-dom";
 //   );
 // }
 
+//Demo 2
+// import React from "react";
+
+// export default function App() {
+//   return (
+//     <div className="min-h-screen bg-white text-gray-900 font-sans">
+
+//       {/* NAVBAR */}
+//       <header className="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
+//         <h1 className="font-bold text-lg">.NET Interview Guide</h1>
+//         <button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">
+//           Get PDF
+//         </button>
+//       </header>
+
+//       {/* HERO */}
+//       <section className="text-center py-24 px-6 max-w-4xl mx-auto">
+//         <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+//           Think Like a Senior. <br />
+//           Pass Any <span className="text-blue-600">.NET Interview</span>
+//         </h1>
+
+//         <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+//           150 real-world interview questions with deep explanations 
+//           that reveal how senior developers actually think.
+//         </p>
+
+//         <div className="mt-10 flex justify-center gap-4">
+//           <button
+//             className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow hover:bg-blue-700"
+//           >
+//             Download Free PDF
+//           </button>
+
+//           <button className="border px-8 py-4 rounded-xl text-lg hover:bg-gray-100">
+//             Preview
+//           </button>
+//         </div>
+
+//         <p className="mt-4 text-sm text-gray-500">
+//           🔥 Used by 1000+ developers
+//         </p>
+//       </section>
+
+//       {/* TRUST BAR */}
+//       <section className="py-10 border-t border-b bg-gray-50 text-center text-gray-500">
+//         Trusted by developers from startups to enterprise teams
+//       </section>
+
+//       {/* PROBLEM CARDS */}
+//       <section className="py-20 px-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+//         {[
+//           "Memorizing answers doesn’t work",
+//           "Interview questions keep changing",
+//           "You don’t think at system level"
+//         ].map((text, i) => (
+//           <div key={i} className="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+//             <p className="text-lg">{text}</p>
+//           </div>
+//         ))}
+//       </section>
+
+//       {/* SOLUTION */}
+//       <section className="py-20 px-6 text-center max-w-3xl mx-auto">
+//         <h2 className="text-4xl font-bold">
+//           This is not a cheat sheet.
+//         </h2>
+//         <p className="mt-6 text-gray-600 text-lg">
+//           It’s a mental model for backend engineers who want to level up fast.
+//         </p>
+//       </section>
+
+//       {/* PREVIEW */}
+//       <section className="py-20 px-6 bg-gray-50">
+//         <div className="max-w-3xl mx-auto">
+//           <h2 className="text-2xl font-bold text-center mb-10">
+//             Example from the guide
+//           </h2>
+
+//           <div className="bg-white p-8 rounded-xl shadow border">
+//             <h3 className="font-semibold text-lg">
+//               Why shouldn't DbContext be Singleton?
+//             </h3>
+
+//             <p className="mt-3 text-gray-500">
+//               Most developers answer: “Because it should be Scoped.”
+//             </p>
+
+//             <p className="mt-6 blur-sm text-gray-400 select-none">
+//               Real answer: DbContext manages state and is not thread-safe...
+//             </p>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* PRICING */}
+//       <section className="py-24 px-6 text-center">
+//         <h2 className="text-4xl font-bold">Simple pricing</h2>
+
+//         <div className="mt-12 max-w-md mx-auto border rounded-2xl p-10 shadow-lg">
+//           <p className="text-2xl font-bold">$19</p>
+//           <p className="mt-2 text-gray-500">One-time payment</p>
+
+//           <ul className="mt-6 space-y-3 text-gray-600">
+//             <li>✔ 150 questions</li>
+//             <li>✔ Deep explanations</li>
+//             <li>✔ Real interview insights</li>
+//           </ul>
+
+//           <button className="mt-8 w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700">
+//             Get Full Access
+//           </button>
+//         </div>
+//       </section>
+
+//       {/* FINAL CTA */}
+//       <section className="py-20 px-6 text-center bg-gradient-to-b from-blue-600 to-blue-500 text-white">
+//         <h2 className="text-4xl font-bold">
+//           Your next interview decides your salary.
+//         </h2>
+
+//         <button className="mt-8 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100">
+//           Start Preparing Now
+//         </button>
+//       </section>
+
+//       {/* FOOTER */}
+//       <footer className="py-10 text-center text-gray-400 text-sm">
+//         © 2026 Cuong Nguyen Ngoc
+//       </footer>
+
+//     </div>
+//   );
+// }
 import React from "react";
+import GeoPricing from "./GeoPricingComponent";
 
 export default function PDFPrenium() {
-      const navigate = useNavigate();
+      // const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
 
@@ -177,12 +312,13 @@ export default function PDFPrenium() {
         </p>
 
         <div className="mt-8">
-          <button
+          {/* <button
             onClick={() => navigate("https://noteflowai.lemonsqueezy.com/checkout/buy/eafef897-b5a8-4fe8-9efb-76d65bac0cc8")}
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md"
           >
             Get Instant Access - $9,99
-          </button>
+          </button> */}
+          <GeoPricing></GeoPricing>
         </div>
 
         <p className="mt-4 text-sm text-gray-500">
@@ -287,7 +423,7 @@ export default function PDFPrenium() {
       </section>
 
       {/* CTA */}
-      <section id="cta" className="py-20 px-6 text-center bg-blue-600 text-white">
+      <section id="cta" className="py-20 px-6 text-center bg-blue-900 text-white">
         <h2 className="text-3xl font-bold">
           Get the full guide now
         </h2>
@@ -296,19 +432,19 @@ export default function PDFPrenium() {
           Start thinking like a senior developer today.
         </p>
 
-        <button
+        {/* <button
           onClick={() => navigate("https://noteflowai.lemonsqueezy.com/checkout/buy/eafef897-b5a8-4fe8-9efb-76d65bac0cc8")}
           className="mt-8 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold shadow-md hover:bg-gray-100"
         >
           Get Full questions + deep answers ($9,99)
-        </button>
+        </button> */}
+        <GeoPricing></GeoPricing>
       </section>
 
       {/* FOOTER */}
       <footer className="py-6 text-center text-gray-400 text-sm">
         © 2026 Cuong Nguyen Ngoc <a href="/">cuongnguyen author</a>
       </footer>
-
     </div>
   );
 }
