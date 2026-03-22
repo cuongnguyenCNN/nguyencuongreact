@@ -1,6 +1,6 @@
 import React from "react";
 import LivePurchasePopup from "../LivePurchasePopup";
-import Headline from "../headline";
+// import Headline from "../headline";
 
 export default function LandingPageProNet() {
   const handleBuyClick = () => {
