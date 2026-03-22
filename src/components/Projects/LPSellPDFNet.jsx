@@ -94,7 +94,7 @@ const payload = {
     );
 
     setSuccess("Successfully! Check your email for the PDF!");
-navigate("/thankyou");
+      navigate("/thankyou");
     setForm({
       name: "",
       phone: "",
@@ -108,7 +108,16 @@ navigate("/thankyou");
 
   setLoading(false);
 };
+ const handleBuyPDFPro = () => {
+    if (window.gtag) {
+      window.gtag("event", "click_buy_pdf_pro_from_ldfree", {
+       page_type: "funnel_free_ld",
+  step: "after_optin"
+      });
+    }
 
+    window.location.href = "/pdfprenium";
+  };
   return (
 
     <div className="min-h-screen bg-gray-50">
@@ -291,7 +300,7 @@ navigate("/thankyou");
             $19
           </p> */}
 
-          <button onClick={() => navigate("/pdfprenium")} className="mt-6 bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition">
+          <button onClick={handleBuyPDFPro} className="mt-6 bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition">
             Get Full 150 questions and deep answers.
           </button>
 
