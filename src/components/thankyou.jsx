@@ -102,18 +102,6 @@ export default function ThankYouPage() {
     }
   }, []);
 
-  const handleBuy = () => {
-    if (window.gtag) {
-      window.gtag("event", "buy_click", {
-        event_category: "engagement",
-        event_label: "pdf_pro_19",
-      });
-    }
-
-    window.location.href =
-      "https://noteflowai.lemonsqueezy.com/checkout/buy/f9ba06c7-64db-42bf-92f1-970bc6193609";
-  };
-
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 min-h-screen bg-gradient-to-br from-white to-gray-100">
       <div className="max-w-2xl w-full">
