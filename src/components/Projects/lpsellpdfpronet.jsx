@@ -1,6 +1,5 @@
 import React from "react";
 import LivePurchasePopup from "../LivePurchasePopup";
-// import Headline from "../headline";
 
 export default function LandingPageProNet() {
   const handleBuyClick = () => {
@@ -82,12 +81,12 @@ export default function LandingPageProNet() {
 
         {/* CTA */}
         <div className="mt-8 flex gap-4 flex-wrap">
-          <a
-            href="https://noteflowai.lemonsqueezy.com/checkout/buy/f9ba06c7-64db-42bf-92f1-970bc6193609"
+          <button
+            onClick={handleBuyClick}
             className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:scale-105 transition"
           >
             🚀 Get the Guide – $19
-          </a>
+          </button>
 
           <a
             href="#example"
@@ -96,12 +95,12 @@ export default function LandingPageProNet() {
             See Example
           </a>
 
-          <button
+          {/* <button
             onClick={handleBuyClick}
             className="px-6 py-3 text-sm rounded-lg bg-black text-white hover:opacity-80 transition"
           >
             🚀 Get Instant Access – $19
-          </button>
+          </button> */}
         </div>
         {/* VALUE */}
         <section className="py-20 px-6 max-w-6xl mx-auto">
@@ -246,12 +245,12 @@ export default function LandingPageProNet() {
             One-time payment. Lifetime access.
           </p>
 
-          <a
-            href="https://noteflowai.lemonsqueezy.com/checkout/buy/f9ba06c7-64db-42bf-92f1-970bc6193609"
+          <button
+            onClick={handleBuyClick}
             className="mt-8 inline-block bg-blue-600 text-white px-10 py-5 rounded-xl text-xl font-semibold hover:scale-105 transition"
           >
             Get Instant Access
-          </a>
+          </button>
           <p className="mt-4 text-sm text-red-500">
             ⚠ Price will increase after adding more examples
           </p>
@@ -269,12 +268,12 @@ export default function LandingPageProNet() {
           Or You Think Like a Senior
         </h2>
 
-        <a
-          href="https://noteflowai.lemonsqueezy.com/checkout/buy/f9ba06c7-64db-42bf-92f1-970bc6193609"
+        <button
+          onClick={handleBuyClick}
           className="mt-6 inline-block bg-white text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:scale-105 transition"
         >
           Get the Guide Now
-        </a>
+        </button>
       </section>
       <footer className="mt-24 text-center text-gray-500 text-sm pb-10">
         Built for developers preparing for .NET interviews by{" "}
