@@ -1,158 +1,145 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import LiveRegisterPDFFree from "../LiveRegisterPDFFree";
 
 export default function LandingPage() {
   const TIER1 = ["US", "UK", "CA", "AU", "DE", "NL"];
-const getUserLocation = async () => {
-  try {
-    const res = await fetch("https://api.country.is/");
-    const data = await res.json();
+  const getUserLocation = async () => {
+    try {
+      const res = await fetch("https://api.country.is/");
+      const data = await res.json();
 
-    return {
-      ip: "unknown",
-      country: data.country,
-      countryCode: data.country,
-    };
-  } catch {
-    return {
-      ip: "unknown",
-      country: "unknown",
-      countryCode: "unknown",
-    };
-  }
-};
-const getTier = (countryCode) => {
-  if (TIER1.includes(countryCode)) return "Tier1";
-  return "Tier3";
-};
-const navigate = useNavigate();
+      return {
+        ip: "unknown",
+        country: data.country,
+        countryCode: data.country,
+      };
+    } catch {
+      return {
+        ip: "unknown",
+        country: "unknown",
+        countryCode: "unknown",
+      };
+    }
+  };
+  const getTier = (countryCode) => {
+    if (TIER1.includes(countryCode)) return "Tier1";
+    return "Tier3";
+  };
+  const navigate = useNavigate();
   const [form, setForm] = useState({
-  name: "",
-  phone: "",
-  email: "",
-  message: "Get PDF Interview C#",
+    name: "",
+    phone: "",
+    email: "",
+    message: "Get PDF Interview C#",
     ip: "",
-    country:"",
+    country: "",
     countryCode: "",
     tier: "",
-});
-
-const [loading, setLoading] = useState(false);
-const [success, setSuccess] = useState("");
-const [errors, setErrors] = useState("");
-
-const validate = () => {
-  if (!form.email) return "Please enter your email.";
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(form.email)) return "Invalid email format.";
-
-  return "";
-};
- 
-const handleChange = (e) => {
-  setForm({
-    ...form,
-    [e.target.name]: e.target.value,
   });
-};
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [errors, setErrors] = useState("");
 
-  const err = validate();
-  if (err) {
-    setErrors(err);
-    return;
-  }
+  const validate = () => {
+    if (!form.email) return "Please enter your email.";
 
-  setLoading(true);
-  setErrors("");
-  setSuccess("");
- const location = await getUserLocation();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) return "Invalid email format.";
 
-const payload = {
-    ...form,
-    ip: location.ip,
-    country: location.country,
-    countryCode: location.countryCode,
-    tier: getTier(location.countryCode),
+    return "";
   };
-  debugger
-  try {
-    await fetch(
-      "https://script.google.com/macros/s/AKfycbx5QE6Rl1jLoChaRdDxRuZCg0BxJKKr7E3lLSxpUOznog9GM3YofZIYIgP4-BtxIak6/exec",
-      {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        }, 
-        body: JSON.stringify(payload),
-      }
-    );
 
-    setSuccess("Successfully! Check your email for the PDF!");
-      navigate("/thankyou");
+  const handleChange = (e) => {
     setForm({
-      name: "",
-      phone: "",
-      email: "",
-      message: "Get PDF Interview C#",
+      ...form,
+      [e.target.name]: e.target.value,
     });
+  };
 
-  } catch (error) {
-    setErrors("Something went wrong. Try again.");
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  setLoading(false);
-};
- const handleBuyPDFPro = () => {
+    const err = validate();
+    if (err) {
+      setErrors(err);
+      return;
+    }
+
+    setLoading(true);
+    setErrors("");
+    setSuccess("");
+    const location = await getUserLocation();
+
+    const payload = {
+      ...form,
+      ip: location.ip,
+      country: location.country,
+      countryCode: location.countryCode,
+      tier: getTier(location.countryCode),
+    };
+    debugger;
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbx5QE6Rl1jLoChaRdDxRuZCg0BxJKKr7E3lLSxpUOznog9GM3YofZIYIgP4-BtxIak6/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        },
+      );
+
+      setSuccess("Successfully! Check your email for the PDF!");
+      navigate("/thankyou");
+      setForm({
+        name: "",
+        phone: "",
+        email: "",
+        message: "Get PDF Interview C#",
+      });
+    } catch (error) {
+      setErrors("Something went wrong. Try again.");
+    }
+
+    setLoading(false);
+  };
+  const handleBuyPDFPro = () => {
     if (window.gtag) {
       window.gtag("event", "click_buy_pdf_pro_from_ldfree", {
-       page_type: "funnel_free_ld",
-  step: "after_optin"
+        page_type: "funnel_free_ld",
+        step: "after_optin",
       });
     }
 
     window.location.href = "/pdfprenium";
   };
   return (
-
     <div className="min-h-screen bg-gray-50">
-
       {/* HERO */}
       <section className="max-w-5xl mx-auto px-6 pt-20 text-center">
-
         <h1 className="text-5xl font-bold text-gray-900 leading-tight">
           150 Real .NET Interview Questions
         </h1>
 
         <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-          A practical guide covering ASP.NET Core, EF Core, and C# concepts
-          that real companies ask in backend interviews.
+          A practical guide covering ASP.NET Core, EF Core, and C# concepts that
+          real companies ask in backend interviews.
         </p>
 
         <p className="mt-4 text-sm text-gray-500">
           Used by 2,000+ developers preparing for interviews
         </p>
-
       </section>
-
 
       {/* EMAIL FORM */}
       <section className="max-w-xl mx-auto mt-12 bg-white shadow-xl rounded-2xl p-8">
+        <h2 className="text-xl font-semibold text-center">Get the Free PDF</h2>
 
-        <h2 className="text-xl font-semibold text-center">
-          Get the Free PDF
-        </h2>
-
-        <form
-          onSubmit={handleSubmit}
-          className="mt-6 flex flex-col gap-4"
-        >
-
+        <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-4">
           <input
             type="email"
             name="email"
@@ -162,32 +149,26 @@ const payload = {
             onChange={handleChange}
             required
           />
-      {errors && (
-        <p className="text-red-500 text-sm" style={{ color: "red" }}>
-          {errors}
-        </p>
-      )}
-      {success && <p className="mt-3 text-success">{success}</p>}
+          {errors && (
+            <p className="text-red-500 text-sm" style={{ color: "red" }}>
+              {errors}
+            </p>
+          )}
+          {success && <p className="mt-3 text-success">{success}</p>}
           <button className="bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                {loading ? "Sending..." : " Send me the PDF  "}
+            {loading ? "Sending..." : " Send me the PDF  "}
           </button>
-
         </form>
 
         <p className="text-xs text-gray-400 mt-4 text-center">
           No spam. Only useful developer resources.
         </p>
-
       </section>
-
 
       {/* BENEFITS */}
       <section className="max-w-5xl mx-auto mt-20 grid md:grid-cols-3 gap-6 px-6">
-
         <div className="bg-white p-6 rounded-xl shadow">
-          <h3 className="font-bold text-lg">
-            Real Interview Questions
-          </h3>
+          <h3 className="font-bold text-lg">Real Interview Questions</h3>
 
           <p className="text-gray-600 mt-2 text-sm">
             Based on real backend engineering interviews.
@@ -195,38 +176,28 @@ const payload = {
         </div>
 
         <div className="bg-white p-6 rounded-xl shadow">
-          <h3 className="font-bold text-lg">
-            Architecture Concepts
-          </h3>
+          <h3 className="font-bold text-lg">Architecture Concepts</h3>
 
           <p className="text-gray-600 mt-2 text-sm">
-            Middleware pipeline, dependency injection,
-            configuration, and scaling.
+            Middleware pipeline, dependency injection, configuration, and
+            scaling.
           </p>
         </div>
 
         <div className="bg-white p-6 rounded-xl shadow">
-          <h3 className="font-bold text-lg">
-            Interview Confidence
-          </h3>
+          <h3 className="font-bold text-lg">Interview Confidence</h3>
 
           <p className="text-gray-600 mt-2 text-sm">
             Master .NET fundamentals and pass interviews.
           </p>
         </div>
-
       </section>
-
 
       {/* SAMPLE QUESTIONS */}
       <section className="max-w-3xl mx-auto mt-24 px-6">
-
-        <h2 className="text-2xl font-bold text-center">
-          Sample Questions
-        </h2>
+        <h2 className="text-2xl font-bold text-center">Sample Questions</h2>
 
         <ul className="mt-6 space-y-3 text-gray-700">
-
           <li>• How does middleware ordering impact request processing?</li>
 
           <li>• When should you use IOptionsMonitor vs IOptionsSnapshot?</li>
@@ -236,89 +207,68 @@ const payload = {
           <li>• How does ASP.NET Core configuration override work?</li>
 
           <li>• DataAnnotations vs FluentValidation trade-offs?</li>
-
         </ul>
-
       </section>
- {/* TESTIMONIALS */}
+      {/* TESTIMONIALS */}
       <section className="bg-white py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
-
-          <h2 className="text-3xl font-bold mb-10">
-            What developers say
-          </h2>
+          <h2 className="text-3xl font-bold mb-10">What developers say</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
-
             <div className="p-6 border rounded-xl">
-              <p className="mb-4">
-                ⭐⭐⭐⭐⭐
-              </p>
+              <p className="mb-4">⭐⭐⭐⭐⭐</p>
               <p className="text-gray-600">
-                This PDF helped me pass my ASP.NET interview
-                at a fintech company.
+                This PDF helped me pass my ASP.NET interview at a fintech
+                company.
               </p>
-              <p className="mt-4 text-sm text-gray-500">
-                — Backend Developer
-              </p>
+              <p className="mt-4 text-sm text-gray-500">— Backend Developer</p>
             </div>
 
             <div className="p-6 border rounded-xl">
-              <p className="mb-4">
-                ⭐⭐⭐⭐⭐
-              </p>
+              <p className="mb-4">⭐⭐⭐⭐⭐</p>
               <p className="text-gray-600">
-                Clear explanations and real questions.
-                Much better than random interview lists.
+                Clear explanations and real questions. Much better than random
+                interview lists.
               </p>
-              <p className="mt-4 text-sm text-gray-500">
-                — .NET Engineer
-              </p>
+              <p className="mt-4 text-sm text-gray-500">— .NET Engineer</p>
             </div>
-
           </div>
-
         </div>
       </section>
 
-
       {/* PREMIUM VERSION */}
       <section className="max-w-4xl mx-auto mt-24 px-6">
-
         <div className="bg-white rounded-2xl shadow-xl p-10 text-center">
-
-          <h2 className="text-2xl font-bold">
-            Want the Full Interview Guide?
-          </h2>
+          <h2 className="text-2xl font-bold">Want the Full Interview Guide?</h2>
 
           <p className="text-gray-600 mt-4">
-            Get the premium version with detailed answers,
-            architecture explanations, and interview strategies.
+            Get the premium version with detailed answers, architecture
+            explanations, and interview strategies.
           </p>
 
           {/* <p className="text-4xl font-bold mt-6">
             $19
           </p> */}
 
-          <button onClick={handleBuyPDFPro} className="mt-6 bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition">
+          <button
+            onClick={handleBuyPDFPro}
+            className="mt-6 bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition"
+          >
             Get Full 150 questions and deep answers.
           </button>
 
           <p className="text-xs text-gray-400 mt-3">
             Instant download after payment
           </p>
-
         </div>
-
       </section>
-
 
       {/* FOOTER */}
       <footer className="mt-24 text-center text-gray-500 text-sm pb-10">
-        Built for developers preparing for .NET interviews by <a href="/">cuongnguyen author</a>
+        Built for developers preparing for .NET interviews by{" "}
+        <a href="/">cuongnguyen author</a>
       </footer>
-
+      <LiveRegisterPDFFree></LiveRegisterPDFFree>
     </div>
-
   );
 }
