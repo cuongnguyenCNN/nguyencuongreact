@@ -1,4 +1,3 @@
-
 // import { CheckCircle, Send, Download, Github } from "lucide-react";
 
 // export default function ThankYouPage() {
@@ -89,16 +88,16 @@
 //     </div>
 //   );
 // }
- import {  Send,  Github } from "lucide-react";
+import { Send, Github } from "lucide-react";
 import { useEffect } from "react";
+import GeoPricing from "./Projects/GeoPricingComponent";
 
 export default function ThankYouPage() {
-
   useEffect(() => {
     if (window.gtag) {
       window.gtag("event", "thank_you_view", {
         event_category: "funnel",
-        event_label: "after_optin"
+        event_label: "after_optin",
       });
     }
   }, []);
@@ -107,17 +106,17 @@ export default function ThankYouPage() {
     if (window.gtag) {
       window.gtag("event", "buy_click", {
         event_category: "engagement",
-        event_label: "pdf_pro_19"
+        event_label: "pdf_pro_19",
       });
     }
 
-    window.location.href = "https://noteflowai.lemonsqueezy.com/checkout/buy/f9ba06c7-64db-42bf-92f1-970bc6193609";
+    window.location.href =
+      "https://noteflowai.lemonsqueezy.com/checkout/buy/f9ba06c7-64db-42bf-92f1-970bc6193609";
   };
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 min-h-screen bg-gradient-to-br from-white to-gray-100">
       <div className="max-w-2xl w-full">
-
         {/* HEADER */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold">Check your email 📩</h1>
@@ -139,22 +138,21 @@ export default function ThankYouPage() {
 
         {/* OFFER */}
         <div className="bg-white border-2 border-black rounded-xl p-6 mb-6 text-center">
-          <h2 className="text-2xl font-bold mb-4">
-            Upgrade to PRO version ($19)
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Upgrade to PRO version</h2>
 
           <ul className="text-left mb-4 space-y-2">
             <li>✔ 150 questions + DEEP answers</li>
             <li>✔ Explain like a senior developer</li>
             <li>✔ Real interview scenarios</li>
           </ul>
-
+          {/* 
           <button
             onClick={handleBuy}
             className="bg-black text-white px-6 py-3 rounded-lg text-lg font-semibold hover:opacity-90 transition"
           >
             Get PRO for $19
-          </button>
+          </button> */}
+          <GeoPricing></GeoPricing>
 
           <p className="text-xs text-gray-500 mt-2">
             One-time payment. Instant access.
@@ -183,24 +181,23 @@ export default function ThankYouPage() {
         </div>
 
         {/* ALT */}
- <div className="flex justify-center gap-4 flex-wrap">
-      <a
-         href="https://web.telegram.org/a/#-1003799786189"
-          className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition"
-             >
-               <Send className="w-4 h-4" />
-               Join Software Devs & Jobs
-             </a>
+        <div className="flex justify-center gap-4 flex-wrap">
+          <a
+            href="https://web.telegram.org/a/#-1003799786189"
+            className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition"
+          >
+            <Send className="w-4 h-4" />
+            Join Software Devs & Jobs
+          </a>
 
-             <a
-               href="https://github.com/cuongnguyenCNN"
-              className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition"
-            >
-              <Github className="w-4 h-4" />
-              Follow GitHub
-             </a>
-        </div> 
-
+          <a
+            href="https://github.com/cuongnguyenCNN"
+            className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition"
+          >
+            <Github className="w-4 h-4" />
+            Follow GitHub
+          </a>
+        </div>
       </div>
     </div>
   );
