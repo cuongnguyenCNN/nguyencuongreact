@@ -70,7 +70,7 @@ export default function LandingPageProNet() {
 
           {/* Trust signal */}
           <div className="text-sm text-green-600 font-medium">
-            ✅ Trusted by 100+ .NET developers worldwide
+            ✅ Trusted by 1000+ .NET developers worldwide
           </div>
 
           {/* Urgency */}
