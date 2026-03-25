@@ -72,7 +72,9 @@ export default function LandingPageProNet() {
           <div className="text-sm text-green-600 font-medium">
             ✅ Trusted by 1000+ .NET developers worldwide
           </div>
-
+          <div className="text-sm text-green-600 font-medium">
+            ✅ One guy told me: I failed 3 interviews before reading this
+          </div>
           {/* Urgency */}
           <div className="text-sm text-red-500 font-semibold">
             ⏳ Price will increase to $29 soon
