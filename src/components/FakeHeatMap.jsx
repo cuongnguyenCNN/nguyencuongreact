@@ -2,18 +2,12 @@
 
 import { useEffect, useState } from "react";
 
-type Dot = {
-  id: number;
-  x: number;
-  y: number;
-};
-
 export default function FakeHeatmap() {
-  const [dots, setDots] = useState<Dot[]>([]);
+  const [dots, setDots] = useState([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const newDot: Dot = {
+      const newDot = {
         id: Date.now(),
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
