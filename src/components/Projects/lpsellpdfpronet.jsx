@@ -283,7 +283,7 @@ export default function LandingPageProNet() {
         <a href="/">cuongnguyen author</a>
       </footer>
       <LivePurchasePopup />
-      <LiveViewers></LiveViewers>
+      <LiveViewers />
     </div>
   );
 }
