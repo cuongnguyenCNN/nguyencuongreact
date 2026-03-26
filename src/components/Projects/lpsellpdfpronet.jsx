@@ -1,5 +1,6 @@
 import React from "react";
 import LivePurchasePopup from "../LivePurchasePopup";
+import LiveViewers from "../LiveViewers";
 
 export default function LandingPageProNet() {
   const handleBuyClick = () => {
@@ -282,6 +283,7 @@ export default function LandingPageProNet() {
         <a href="/">cuongnguyen author</a>
       </footer>
       <LivePurchasePopup />
+      <LiveViewers></LiveViewers>
     </div>
   );
 }
