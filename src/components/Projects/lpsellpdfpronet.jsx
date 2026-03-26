@@ -10,10 +10,15 @@ export default function LandingPageProNet() {
       event_category: "engagement",
       event_label: "guide_19",
     });
+    window.open(
+      "https://noteflowai.lemonsqueezy.com/checkout/buy/f9ba06c7-64db-42bf-92f1-970bc6193609",
+      "_blank",
+      "noopener,noreferrer",
+    );
 
     // Redirect sang checkout
-    window.location.href =
-      "https://noteflowai.lemonsqueezy.com/checkout/buy/f9ba06c7-64db-42bf-92f1-970bc6193609";
+    // window.location.href =
+    //   "https://noteflowai.lemonsqueezy.com/checkout/buy/f9ba06c7-64db-42bf-92f1-970bc6193609";
   };
 
   return (
@@ -125,6 +130,62 @@ export default function LandingPageProNet() {
             ))}
           </div>
         </section>
+      </section>
+      <section className="w-full py-20 bg-gradient-to-b from-black to-gray-900 text-white">
+        <div className="max-w-6xl px-6 mx-auto">
+          {/* Title */}
+          <h2 className="mb-12 text-3xl font-bold text-center md:text-4xl">
+            You have 2 choices:
+          </h2>
+
+          {/* 2 columns */}
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* LEFT - Pain */}
+            <div className="p-8 border border-red-500/30 bg-red-500/10 rounded-2xl backdrop-blur">
+              <h3 className="mb-6 text-xl font-semibold text-red-400">
+                Stay stuck
+              </h3>
+
+              <ul className="space-y-4 text-gray-300">
+                <li>❌ Memorizing answers like a junior</li>
+                <li>❌ Failing interviews again and again</li>
+                <li>❌ Watching less experienced devs get hired</li>
+              </ul>
+            </div>
+
+            {/* RIGHT - Gain */}
+            <div className="p-8 border border-green-500/30 bg-green-500/10 rounded-2xl backdrop-blur">
+              <span className="inline-block px-3 py-1 mb-4 text-xs font-semibold text-black bg-green-400 rounded-full">
+                MOST CHOSEN
+              </span>
+              <h3 className="mb-6 text-xl font-semibold text-green-400">
+                Level up
+              </h3>
+
+              <ul className="space-y-4 text-gray-200">
+                <li>✅ Answer like a senior developer</li>
+                <li>✅ Explain trade-offs with confidence</li>
+                <li>✅ Walk into interviews knowing you’ll pass</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-12 text-center">
+            {/* <button
+              onClick={handleBuyClick}
+              className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:scale-105 transition"
+            >
+              🚀 Get the Guide – $19
+            </button> */}
+            <button
+              onClick={handleBuyClick}
+              className="inline-block px-8 py-4 text-lg font-semibold text-black transition bg-white rounded-xl  hover:scale-105 hover:bg-gray-200"
+            >
+              👉 Get Instant Access
+            </button>
+          </div>
+        </div>
       </section>
       <section className="py-20 bg-gray-50 text-center px-6">
         <h2 className="text-3xl font-bold">
