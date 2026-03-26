@@ -1,6 +1,7 @@
 import React from "react";
 import LivePurchasePopup from "../LivePurchasePopup";
 import LiveViewers from "../LiveViewers";
+import FakeHeatmap from "../FakeHeatMap";
 
 export default function LandingPageProNet() {
   const handleBuyClick = () => {
@@ -284,6 +285,7 @@ export default function LandingPageProNet() {
       </footer>
       <LivePurchasePopup />
       <LiveViewers />
+      <FakeHeatmap></FakeHeatmap>
     </div>
   );
 }
