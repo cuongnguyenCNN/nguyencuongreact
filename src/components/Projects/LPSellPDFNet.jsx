@@ -250,16 +250,11 @@ export default function LandingPage() {
             $19
           </p> */}
 
-          <button
-            onClick={handleBuyPDFPro}
-            className="mt-6 bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition"
-          >
+          <button className="mt-6 bg-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-green-700 transition">
             Get Full 150 questions and deep answers.
           </button>
 
-          <p className="text-xs text-gray-400 mt-3">
-            Instant download after payment
-          </p>
+          <p className="text-xs text-gray-400 mt-3">Instant download</p>
         </div>
       </section>
 
