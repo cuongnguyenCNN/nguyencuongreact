@@ -107,16 +107,16 @@ export default function LandingPage() {
 
     setLoading(false);
   };
-  const handleBuyPDFPro = () => {
-    if (window.gtag) {
-      window.gtag("event", "click_buy_pdf_pro_from_ldfree", {
-        page_type: "funnel_free_ld",
-        step: "after_optin",
-      });
-    }
+  // const handleBuyPDFPro = () => {
+  //   if (window.gtag) {
+  //     window.gtag("event", "click_buy_pdf_pro_from_ldfree", {
+  //       page_type: "funnel_free_ld",
+  //       step: "after_optin",
+  //     });
+  //   }
 
-    window.location.href = "/pdfprenium";
-  };
+  //   window.location.href = "/pdfprenium";
+  // };
   return (
     <div className="min-h-screen bg-gray-50">
       {/* HERO */}
